@@ -1,0 +1,72 @@
+#
+# Configuration for travis-ci testing
+#
+sudo: false
+
+# Test on Ubuntu 14
+dist: trusty
+
+language: python
+
+matrix:
+    # Always put true env variable first, for nicer overview on travis website
+    include:
+        # Unit tests on different python versions, all on Ubuntu
+        - python: "2.7"
+          env:
+            - OXRSE_UNIT=true
+        - python: "3.4"
+          env:
+            - OXRSE_UNIT=true
+        - python: "3.5"
+          env:
+            - OXRSE_UNIT=true
+        - python: "3.6"
+          env:
+            - OXRSE_UNIT=true
+
+        # Unit tests on OS/X
+        - os: osx
+          language: generic
+          env:
+            - OXRSE_UNIT=true
+
+        # Cover, style, and docs (latest version only)
+        - python: "3.6"
+          env:
+            - OXRSE_COVER=true
+        - python: "3.6"
+          env:
+            - OXRSE_STYLE=true
+        - python: "3.6"
+          env:
+            - OXRSE_DOCS=true
+
+# Install Python dependencies
+install:
+  # Install OxRSE with extra dependencies
+  - pip install -e .[dev,docs]
+  # Install cover checking libraries
+  - if [[ $OXRSE_COVER == true ]]; then pip install coverage codecov; fi;
+
+# Show Python version
+before_script:
+- python --version
+
+# Run tests
+script:
+  - if [[ $OXRSE_UNIT == true ]]; then python -m unittest discover; fi;
+  - if [[ $OXRSE_COVER == true ]]; then coverage run -m unittest discover; fi;
+  - if [[ $OXRSE_STYLE == true ]]; then python -m flake8; fi;
+  - if [[ $OXRSE_DOCS == true ]]; then sphinx-build -b html docs/source docs/build/html -W; fi;
+
+# Compile coverage report
+after_success:
+  - if [[ $OXRSE_COVER == true ]]; then codecov; fi;
+
+# Send notifications
+notifications:
+  email:
+    recipients:
+    - michael.clerx@cs.ox.ac.uk
+

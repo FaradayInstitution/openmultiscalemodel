@@ -1,0 +1,19 @@
+If you have a publication for your project, add it here. For example:
+
+Template Python Project: An awesome Python tool
+Ox, Rseman, Codington. 2018.
+Journal of awesome tools
+
+https://dx.doi.org/doi-goes-here
+
+A BibTeX entry for LaTeX users is
+
+@article{Ox2108PyTemplate,
+  title = {Template Python Project: An awesome Python tool},
+  author = {Ox, Annette and Rseman, Barry and Codington, Cindy},
+  journal = {Journal of awesome tools},
+  year = {2018},
+  volume = {100},
+  number = {1--3},
+  pages = {1--15}
+}
