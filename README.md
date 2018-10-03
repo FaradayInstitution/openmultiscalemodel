@@ -2,7 +2,7 @@
 [![TravisCI](https://travis-ci.org/FaradayInstitution/openmultiscalemodel.svg?branch=master)](https://travis-ci.org/FaradayInstitution/openmultiscalemodel/)
 [![Build status](https://ci.appveyor.com/api/projects/status/6pft0ep4e50x5815/branch/master?svg=true)](https://ci.appveyor.com/project/martinjrobins/openmultiscalemodel/branch/master)
 [![codecov](https://codecov.io/gh/FaradayInstitution/openmultiscalemodel/branch/master/graph/badge.svg)](https://codecov.io/gh/FaradayInstitution/openmultiscalemodel)
-[![Documentation Status](https://readthedocs.org/projects/oxrse-template-project-python/badge/?version=latest)](https://oxrse-template-project-python.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/openmultiscalemodel/badge/?version=latest)](https://openmultiscalemodel.readthedocs.io/en/latest/?badge=latest)
 
 ## Overview
 
