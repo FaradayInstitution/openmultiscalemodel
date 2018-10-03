@@ -68,5 +68,5 @@ after_success:
 notifications:
   email:
     recipients:
-    - michael.clerx@cs.ox.ac.uk
+    - martin.robinson@cs.ox.ac.uk
 
